@@ -17,7 +17,6 @@ class Card
 {
 private:
 	void makeCardTextAndValue(int suit, int rank);
-
 protected:
 	bool m_visible;
 	string m_cardText;

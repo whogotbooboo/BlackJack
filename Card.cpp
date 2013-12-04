@@ -23,7 +23,10 @@ Card::Card(int suit, int rank, bool isVisible)
 
 string Card::getCardText()
 {
-	return m_cardText;
+	if (m_visible)
+		return m_cardText;
+	else
+		return "? ?? ???????";
 }
 
 void Card::setCardText( const string& newCardText )

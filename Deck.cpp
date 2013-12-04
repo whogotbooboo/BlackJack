@@ -156,10 +156,7 @@ void Deck::purge() //Postcondition: Removes all cards from the deck
 void Deck::displayCards()
 {
 	for (int x = 0; x < count; x++)
-		if (cardsInDeck[x]->isVisible())
 			cout << cardsInDeck[x]->getCardText() << endl;
-		else
-			cout << "?? ???????" << endl;
 }
 Deck::~Deck(void)
 {
