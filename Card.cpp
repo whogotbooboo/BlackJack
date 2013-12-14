@@ -2,6 +2,14 @@
 
 #include "Card.h"
 
+	/*************************************************************
+	 * Name				:	Card
+	 * Input			:	None
+	 * Return			:	None
+	 * Precondition		:	includes string
+	 * PostCondition	:	Sets rank, suit, cardText, and visibility
+	 * 						of card
+	 ************************************************************/
 Card::Card(void)
 {
 	m_visible = true;
@@ -9,18 +17,43 @@ Card::Card(void)
 	m_cardValue = 0;
 }
 
+/*************************************************************
+ * Name				:	Card
+ * Input			:	int, int
+ * Return			:	None
+ * Precondition		:	includes string
+ * PostCondition	:	Sets rank, suit, cardText, and visibility
+ * 						of card
+ ************************************************************/
 Card::Card(int suit, int rank)
 {
 	makeCardTextAndValue(suit, rank);
 	m_visible = true;
 
 }
+
+/*************************************************************
+ * Name				:	Card
+ * Input			:	int, int, bool
+ * Return			:	None
+ * Precondition		:	includes string
+ * PostCondition	:	Sets rank, suit, cardText, and visibility
+ * 						of card
+ ************************************************************/
 Card::Card(int suit, int rank, bool isVisible)
 {
 	m_visible = isVisible;
 	makeCardTextAndValue(suit, rank);
 }
 
+/*************************************************************
+ * Name				:	getCardText
+ * Input			:	None
+ * Return			:	string
+ * Precondition		:	Includes string
+ * PostCondition	:	Returns card's text if card is visible
+ * 						otherwise returns "? ?? ???????"
+ ************************************************************/
 string Card::getCardText()
 {
 	if (m_visible)
@@ -29,19 +62,31 @@ string Card::getCardText()
 		return "? ?? ???????";
 }
 
-void Card::setCardText( const string& newCardText )
-{
-	m_cardText = newCardText;
-}
+/*************************************************************
+ * Name				:	toggleVisibility
+ * Input			:	None
+ * Return			:	None
+ * Precondition		:	m_visible initialized
+ * PostCondition	:	switches value of m_visible true/false
+ ************************************************************/
 void Card::toggleVisibility()
 {
 	m_visible = !m_visible;
 }
 
+/*************************************************************
+ * Name				:	isVisible
+ * Input			:	None
+ * Return			:	bool
+ * Precondition		:	m_visible initialized
+ * PostCondition	:	Returns true if the card is visible
+ ************************************************************/
 bool Card::isVisible()
 {
 	return m_visible;
 }
+
+
 
 void Card::makeCardTextAndValue(int suit, int rank)
 {
@@ -119,7 +164,26 @@ void Card::makeCardTextAndValue(int suit, int rank)
 		}
 		m_cardText = cardRank + " of " + cardSuit;
 }
+
+/*************************************************************
+ * Name				:	getVal
+ * Input			:	None
+ * Return			:	int
+ * Precondition		:	m_cardValue initialized
+ * PostCondition	:	returns card's value
+ ************************************************************/
+int Card::getVal(void)
+{
+	return m_cardValue;
+}
+
+/*************************************************************
+ * Name				:	~Card
+ * Input			:	None
+ * Return			:	None
+ * Precondition		:	The card exists
+ * PostCondition	:	Destroys the card
+ ************************************************************/
 Card::~Card(void)
 {
 }
-
