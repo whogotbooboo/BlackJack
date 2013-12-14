@@ -10,7 +10,7 @@
 Deck::Deck(void)
 {
 	srand(time(NULL)); //set the random seed
-	cardsInDeck = new Card*[DECK_SIZE_LIMIT];
+	cardsInDeck = new Card*[DECK_SIZE_LIMIT]; //as set in requirements an array of cards
 	for(int x = 0; x < DECK_SIZE_LIMIT; x++)
 		cardsInDeck[x] = NULL;
 	count = 0;
@@ -28,7 +28,7 @@ Deck::Deck(void)
 Deck::Deck(Card* p_newCards[] , int p_count)
 {
 	srand(time(NULL));  //set the random seed
-	cardsInDeck = new Card*[DECK_SIZE_LIMIT];
+	cardsInDeck = new Card*[DECK_SIZE_LIMIT]; //as set in requirements an array of cards
 	count = 0;
 	reshuffleCount = 15;
 	for(int x = 0; x < DECK_SIZE_LIMIT; x++)
@@ -55,7 +55,7 @@ Deck::Deck(Card* p_newCards[] , int p_count)
 Deck::Deck(vector<Card*> p_newCards)
 {
 	srand(time(NULL));  //set the random seed
-	cardsInDeck = new Card*[DECK_SIZE_LIMIT];
+	cardsInDeck = new Card*[DECK_SIZE_LIMIT]; //as set in requirements an array of cards
 	count = 0;
 	reshuffleCount = 15;
 	for(int x = 0; x < DECK_SIZE_LIMIT; x++)

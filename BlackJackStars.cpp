@@ -340,7 +340,7 @@ void reformDeck(Deck *drawDeck, Deck *discardDeck)
  ************************************************************/
 bool didPlayerWin(int playerScore, int dealerScore)
 {
-	if (playerScore >= dealerScore)
+	if (playerScore >= dealerScore) //as set in requirements tie wins
 		return true;
 	return false;
 }
